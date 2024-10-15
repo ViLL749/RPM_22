@@ -1,35 +1,33 @@
 import pygame
-import random
 
 # Инициализация Pygame
 pygame.init()
 
-# Настройки экрана
+# Ширина и высота экрана
 screen_width = 640
-screen_height = 480
+screen_height = 520
 screen = pygame.display.set_mode((screen_width, screen_height))
-pygame.display.set_caption('Лабиринт')
+pygame.display.set_caption('Фоновое изображение')
 
-# Определяем цвета
-black = (0, 0, 0)
-white = (255, 255, 255)
-
-# Загружаем фон (используйте ваше изображение)
-background_image = pygame.image.load('background.jpg')  # Убедитесь, что файл существует
+# Загрузка и масштабирование фонового изображения
+background_image = pygame.image.load('background.jpg')
 background_image = pygame.transform.scale(background_image, (screen_width, screen_height))
 
-# Основной цикл игры
-running = True
-while running:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            running = False
+# Основная функция
+def main():
+    clock = pygame.time.Clock()
 
-    # Отображение фона
-    screen.blit(background_image, (0, 0))
+    while True:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                quit()
 
-    # Обновление экрана
-    pygame.display.flip()
+        screen.blit(background_image, (0, 0))  # Отображение фонового изображения
 
-# Завершение Pygame
-pygame.quit()
+        pygame.display.update()
+        clock.tick(60)  # Поддержка 60 кадров в секунду
+
+# Запуск основной функции
+if __name__ == "__main__":
+    main()
