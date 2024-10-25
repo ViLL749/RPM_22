@@ -17,7 +17,7 @@
 ##### Системный анализ: #####
 
 > Входные данные: `None`    
-> Промежуточные данные: `int screen_width`, `int screen_height`
+> Промежуточные данные: `int screen_width`, `int screen_height`     
 > Выходные данные: `background_image`
 
 ##### Блок схема: #####
